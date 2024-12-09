@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+        .div {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            border: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #333;
+            text-transform: uppercase;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: #0056b3;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="div" id="div1"></div>
+    <button class="btn" id="generateBtn" >Change Color</button>
+
+    <script>
+
+        let colorBox = document.getElementById("div1");
+        let btn = document.getElementById("generateBtn");
+
+        function generateRandomColor(){
+            // let randomColor = '#'+Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            let randomColor = '#'+Math.floor(Math.random() * 16777215).toString(16)
+            return randomColor;
+        }
+
+        btn.addEventListener('click', ()=>{
+            let newColor = generateRandomColor();
+            colorBox.style.backgroundColor = newColor;
+            colorBox.textContent = newColor;
+
+        })
+
+    </script>
+    
+</body>
+</html>
